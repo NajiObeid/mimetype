@@ -92,10 +92,10 @@ func (m *MIME) match(in []byte) *MIME {
 	return m
 }
 
-func (m *MIME) flatten() []*MIME {
+func (m *MIME) Flatten() []*MIME {
 	out := []*MIME{m}
 	for _, c := range m.children {
-		out = append(out, c.flatten()...)
+		out = append(out, c.Flatten()...)
 	}
 
 	return out
