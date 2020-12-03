@@ -23,7 +23,7 @@ func Detect(in []byte) *MIME {
 	if len(in) > matchers.ReadLimit {
 		in = in[:matchers.ReadLimit]
 	}
-	return root.match(in)
+	return Root.match(in)
 }
 
 // DetectReader returns the MIME type of the provided reader.
@@ -42,7 +42,7 @@ func DetectReader(r io.Reader) (*MIME, error) {
 	in := make([]byte, matchers.ReadLimit)
 	n, err := io.ReadFull(r, in)
 	if err != nil && err != io.EOF && err != io.ErrUnexpectedEOF {
-		return root, err
+		return Root, err
 	}
 	in = in[:n]
 
@@ -60,7 +60,7 @@ func DetectReader(r io.Reader) (*MIME, error) {
 func DetectFile(file string) (*MIME, error) {
 	f, err := os.Open(file)
 	if err != nil {
-		return root, err
+		return Root, err
 	}
 	defer f.Close()
 
