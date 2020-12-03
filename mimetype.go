@@ -12,7 +12,7 @@ import (
 	"mime"
 	"os"
 
-	"github.com/gabriel-vasile/mimetype/v1/internal/matchers"
+	"github.com/gabriel-vasile/mimetype/internal/matchers"
 )
 
 // Detect returns the MIME type found from the provided byte slice.

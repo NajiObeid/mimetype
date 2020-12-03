@@ -1,5 +1,3 @@
-module github.com/gabriel-vasile/mimetype/v1
+module github.com/gabriel-vasile/mimetype
 
 go 1.15
-
-require github.com/gabriel-vasile/mimetype v1.1.2
